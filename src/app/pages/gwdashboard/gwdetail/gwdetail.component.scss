@@ -1,0 +1,82 @@
+@import "../../../theme/sass/conf/conf";
+@import "../../../app.component";
+@import "../gwmain/gwmain.component";
+
+.nav-pills {
+  li {
+    margin-left: 10px;
+  }
+}
+
+.location-input {
+  background: transparent;
+  width: 100px;
+}
+
+.scrollable-area {
+  margin: auto;
+  height: 250px;
+  overflow-y: scroll; /* <-- here is what is important*/
+}
+
+.gwdsimplepie-style {
+  padding: 0;
+  height: 100%;
+}
+
+.white-border-card {
+  border: 1px solid white;
+}
+
+tr:hover {
+  cursor: default;
+}
+
+.nav {
+  cursor: pointer;
+
+  a:hover {
+    background-color: gray;
+  }
+}
+
+.left-side-bar {
+  display: block;
+  min-height: 100%;
+  background-color: #777;
+  position: relative;
+  height: auto;
+  float: left;
+  padding-bottom: 1500px;
+  margin-bottom: -1500px;
+}
+
+.right-content {
+  z-index: 10;
+  display: block;
+  min-height: 100%;
+  background-color: #282828;
+  height: 100%;
+  float: left;
+  padding-bottom: 1500px;
+  margin-bottom: -1500px;
+  list-style-position: inside;
+}
+
+.aligncenter-content {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+
+  span {
+    font-size: 11pt;
+  }
+}
+
+.detail-map {
+  min-width: 100%;
+  margin-top: 8px;
+  display: block;
+  height: 150px;
+}

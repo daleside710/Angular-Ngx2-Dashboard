@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <ba-card>
+      <div class="leaflet-maps"></div>
+    </ba-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <ba-card cardTitle="Connected Devices">
+    </ba-card>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <ba-card cardTitle="Connected Gateways">
+      <li class="monitoring-list" *ngFor="let g of gatewayList; let i = index">
+        <span class="monitoring-list-id">{{i+1}}</span>
+        <span class="monitoring-list-name">{{g.GatewayID}}</span>
+      </li>
+    </ba-card>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <ba-card cardTitle="Suspicious Nodes">
+    </ba-card>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <ba-card cardTitle="Malicious Nodes">
+    </ba-card>
+  </div>
+</div>

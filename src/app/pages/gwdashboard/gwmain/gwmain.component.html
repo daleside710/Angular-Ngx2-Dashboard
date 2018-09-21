@@ -1,0 +1,100 @@
+<div class="row">
+  <ba-card class="col-xlg-7 col-xl-7 col-lg-12 col-sm-12 col-12" baCardClass="medium-card">
+    <h4 style="text-align: center;" translate>Gateway Monitoring</h4>
+    <div class="leaflet-maps" style="height:310px;"></div>
+    <div class="row" style="margin-top:10px">
+      <div class="col-xlg-6 col-xl-9 col-lg-9 col-sm-9 col-12" style="margin-left:auto; margin-right:auto;">
+        <img class="map-mark-image" src="{{ ( 'app/gateway/icon_normal.png' | baAppPicture )}}">
+        <span class="map-mark-span">Normal</span>
+        <img class="map-mark-image" src="{{ ( 'app/gateway/icon_suspicious.png' | baAppPicture )}}">
+        <span class="map-mark-span">Suspicious</span>
+        <img class="map-mark-image" src="{{ ( 'app/gateway/icon_malicious.png' | baAppPicture )}}">
+        <span class="map-mark-span">Malicious</span>
+      </div>
+    </div>
+  </ba-card>
+  <div class="col-xlg-5 col-xl-5 col-lg-12 col-sm-12 col-12">
+    <div class="row">
+      <ba-card class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12" baCardClass="xsmall-card">
+        <h4 style="text-align: center;" translate>Gateway Status</h4>
+        <div class="row">
+          <div class="col-xlg-8 col-xl-8 col-lg-8 col-sm-8 col-8" style="height:150px;padding:0">
+            <div style="margin:auto;position: relative;top: 50%;transform: translateY(-50%);">
+              <span class="gateways-status-span">{{nStatusHigh}}</span>
+              <span class="gateways-status-title-span">High</span>
+              <span class="gateways-status-span">{{nStatusMedium}} </span>
+              <span class="gateways-status-title-span">Medium</span>
+              <span class="gateways-status-span">{{nStatusLow}} </span>
+              <span class="gateways-status-title-span">Low</span>
+            </div>
+          </div>
+          <div class="col-xlg-4 col-xl-4 col-lg-4 col-sm-4 col-4">
+            <div id="piechart_gatewaystatus" [style.width.%]="100" [style.height.%]="100"></div>
+          </div>
+        </div>
+      </ba-card>
+      <ba-card class="col-xl-12 col-lg-6  col-md-6 col-sm-6 col-12" baCardClass="xsmall-card">
+        <h4 style="text-align: center;" translate>Network Performance</h4>
+        <div id="linechart_netperform" [style.width.%]="100" [style.height.px]="120"></div>
+        <div class="device-button-group">
+          <div class="device-button"><span class="device-label send"></span>Send</div>
+          <div class="device-button"><span class="device-label receive"></span>Receive</div>
+          <div class="device-button"><span class="device-label error"></span>Error</div>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <ba-card class="col-xlg-12 col-xl-12 col-lg-12 col-sm-12 col-12" baCardClass="medium-card with-scroll">
+    <h4 style="text-align: center;" translate>List of Gateway</h4>
+    <div class="horizontal-scroll" style="margin-top: 15px;">
+      <table class="table table-bordered" [mfData]="dataGatewayList" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <thead>
+          <tr>
+            <th style="width: 10%;">
+              <mfDefaultSorter>SN</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>IP Address</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Device</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Model</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Status</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Connected Devices</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Last Seen</mfDefaultSorter>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of mf.data" (click)="onGatewaySelectItem(item)">
+            <td>{{item.SN}}</td>
+            <td>{{item.Ip}}</td>
+            <td>{{item.Device}}</td>
+            <td>{{item.Model}}</td>
+            <td>{{item.Status}}</td>
+            <td>{{item.Connected_Devices}}</td>
+            <td ngClass="nowrap">{{item.Last_Seen}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="7" style="height:60px">
+              <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </ba-card>
+</div>

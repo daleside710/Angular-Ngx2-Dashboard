@@ -1,0 +1,68 @@
+<div class="row container-style">
+  <div class="col-12" style="height:100%">
+    <div class="scrollable-area" style="margin:10px 10px 10px 10px;">
+      <table class="table table-bordered" [mfData]="dataExistingPolice" #mf="mfDataTable" [mfRowsOnPage]="4">
+        <thead>
+          <tr>
+            <th style="width: 10%">
+              <mfDefaultSorter>SN</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Gateway ID</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Chain</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Source IP</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Protocol</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Destination Port</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Target</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Status</mfDefaultSorter>
+            </th>
+            <th style="width: 5%">
+              <mfDefaultSorter>Select</mfDefaultSorter>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of mf.data">
+            <td>{{item.SN}}</td>
+            <td>{{item.GID}}</td>
+            <td>{{item.Chain}}</td>
+            <td>{{item.SourceIP}}</td>
+            <td>{{item.Protocol}}</td>
+            <td>{{item.DestPort}}</td>
+            <td>{{item.Target}}</td>
+            <td>{{item.Status}}</td>
+            <td><input type="checkbox" [checked]=state (change)="onSelectGateway(item)" [disabled]="disabled" [value]="item.selected"></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="9" style="height:50px;">
+              <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="row">
+      <div style="margin-left:auto;margin-right:auto;">
+        <gwdimagebtn (click)="onNew()" btnTitle="New" btnImage="{{'/app/gateway/icon_new.png' | baAppPicture}}"></gwdimagebtn>
+        <gwdimagebtn (click)="onDisable()" btnTitle="Disable" btnImage="{{'/app/gateway/icon_disabled.png' | baAppPicture}}"></gwdimagebtn>
+        <gwdimagebtn (click)="onEnable()" btnTitle="Enable" btnImage="{{'/app/gateway/icon_enabled.png' | baAppPicture}}"></gwdimagebtn>
+        <gwdimagebtn (click)="onEdit()" btnTitle="Edit" btnImage="{{'/app/gateway/icon_edit.png' | baAppPicture}}"></gwdimagebtn>
+        <gwdimagebtn (click)="onDelete()" btnTitle="Delete" btnImage="{{'/app/gateway/icon_delete.png' | baAppPicture}}"></gwdimagebtn>
+      </div>
+    </div>
+  </div>
+</div>

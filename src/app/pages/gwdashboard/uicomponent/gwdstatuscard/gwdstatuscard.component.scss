@@ -1,0 +1,28 @@
+@import "../../gwdetail/gwdetail.component";
+@import "../../../../theme/sass/conf/conf";
+
+.statuscard-image {
+  width: 20px;
+  height: 20px;
+}
+
+.statuscard-style {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}
+
+@media (max-width: $resXXS) {
+  .statuscard-style {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.statuscard-title {
+  font-size: 7.5pt;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

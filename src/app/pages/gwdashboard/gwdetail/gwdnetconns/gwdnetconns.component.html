@@ -1,0 +1,54 @@
+<div class="col-12 container-style">
+  <div class="col-12">
+    <div class="row">
+      <h3 style="text-align: center;margin-top:10px;">Network</h3>
+    </div>
+    <div class="scrollable-area row" style="margin-top: 15px;">
+      <table class="table table-bordered" [mfData]="dataNetwork" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <thead>
+          <tr>
+            <th style="width: 10%">
+              <mfDefaultSorter>SN</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>PID</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Local IP</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Remote IP</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Type</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Family</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Status</mfDefaultSorter>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of mf.data" (click)="onGatewaySelectItem(item)">
+            <td>{{item.SN}}</td>
+            <td>{{item.PID}}</td>
+            <td>{{item.LocalIP}}</td>
+            <td>{{item.RemoteIP}}</td>
+            <td>{{item.Type}}</td>
+            <td>{{item.Family}}</td>
+            <td>{{item.Status}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="7" style="height:60px">
+              <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

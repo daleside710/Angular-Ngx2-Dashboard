@@ -1,0 +1,76 @@
+<div class="row container-style">
+  <div class="col-xlg-7 col-xl-7 col-lg-7 col-md-7 col-sm-12" style="height:200px;">
+    <h5 style="text-align: center;margin-top:10px; height:20px;">Top 10 Most Restarted Services</h5>
+    <div class="scrollable-area" style="margin-left:5px;">
+      <table class="table table-bordered" [mfData]="dataTop10" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+          <tr>
+            <th style="width: 10%">
+              <mfDefaultSorter>SN</mfDefaultSorter>
+            </th>
+            <th style="width: 5%">
+              <mfDefaultSorter>PID</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Local IP</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Remote IP</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Type</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Family</mfDefaultSorter>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of mf.data" (click)="onGatewaySelectItem(item)">
+            <td>{{item.SN}}</td>
+            <td>{{item.PID}}</td>
+            <td>{{item.LocalIP}}</td>
+            <td>{{item.RemoteIP}}</td>
+            <td>{{item.Type}}</td>
+            <td>{{item.Family}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="7" style="height:50px;visibility:hidden">
+              <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div class="col-xlg-5 col-xl-5 col-lg-5 col-md-5  col-sm-12 container-rightgraph">
+    <div class="row piegraphregion">
+      <gwdsimplepie class="col-4 col-sm-4 col-md-4 ssosimplepie-style" pieID="pie1" pieTitle="Started" subTitle="Services"
+        nTotal="{{nTotal}}" nValue="{{nStartedValue}}"></gwdsimplepie>
+      <gwdsimplepie class="col-4 col-sm-4 col-md-4 ssosimplepie-style" pieID="pie2" pieTitle="Stopped" subTitle="Services"
+        nTotal="{{nTotal}}" nValue="{{nStoptedValue}}"></gwdsimplepie>
+      <gwdsimplepie class="col-4 col-sm-4 col-md-4 ssosimplepie-style" pieID="pie3" pieTitle="Restarted" subTitle="Services"
+        nTotal="{{nTotal}}" nValue="{{nRestartedValue}}"></gwdsimplepie>
+    </div>
+    <div class="col-12  col-sm-12 linegraphregion">
+      <div style="height:40px;">
+        <ul class="nav nav-pills" style="font-size:9pt">
+          <li *ngIf="nSelectTab==0" class="active"><a (click)="onTabSelect(0)">Week</a></li>
+          <li *ngIf="nSelectTab!=0"><a (click)="onTabSelect(0)">Week</a></li>
+          <li *ngIf="nSelectTab==1" class="active"><a (click)="onTabSelect(1)">Month</a></li>
+          <li *ngIf="nSelectTab!=1"><a (click)="onTabSelect(1)">Month</a></li>
+          <li *ngIf="nSelectTab==2" class="active"><a (click)="onTabSelect(2)">Year</a></li>
+          <li *ngIf="nSelectTab!=2"><a (click)="onTabSelect(2)">Year</a></li>
+        </ul>
+      </div>
+      <div id="linechart_service" style="width:100%;height:calc(100% - 80px);"></div>
+      <div class="device-button-group" style="height:30px;">
+        <div class="device-button"><span class="device-label send"></span>Started</div>
+        <div class="device-button"><span class="device-label receive"></span>Stopped</div>
+        <div class="device-button"><span class="device-label error"></span>Restarted</div>
+      </div>
+    </div>
+  </div>
+</div>

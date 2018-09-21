@@ -1,0 +1,17 @@
+<div class="col-12" style="height:auto;">
+  <div class="row" style="margin-top:10px;padding-left:10px;">
+    <ul class="nav nav-pills">
+      <li *ngIf="nSelectTab==0" class="active"><a (click)="onTabSelect(0)">Overview</a></li>
+      <li *ngIf="nSelectTab!=0"><a (click)="onTabSelect(0)">Overview</a></li>
+      <li *ngIf="nSelectTab==1" class="active"><a (click)="onTabSelect(1)">Existing Services</a></li>
+      <li *ngIf="nSelectTab!=1"><a (click)="onTabSelect(1)">Existing Services</a></li>
+    </ul>
+  </div>
+  <div class="row" style="height:auto;">
+    <div class="col">
+      <div class="white-border-card" style="margin-top:10px;margin-bottom:10px;height:auto;">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

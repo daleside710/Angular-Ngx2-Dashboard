@@ -1,0 +1,62 @@
+<div class="row container-style">
+  <div class="col-12" style="height:100%">
+    <div class="scrollable-area" style="margin:10px 10px 10px 10px;">
+      <table class="table table-bordered" [mfData]="dataExistingService" #mf="mfDataTable" [mfRowsOnPage]="4">
+        <thead>
+          <tr>
+            <th style="width: 10%">
+              <mfDefaultSorter>SN</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>PID</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Local IP</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Remote IP</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter>Type</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Family</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Status</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+              <mfDefaultSorter>Select</mfDefaultSorter>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of mf.data">
+            <td>{{item.SN}}</td>
+            <td>{{item.PID}}</td>
+            <td>{{item.LocalIP}}</td>
+            <td>{{item.RemoteIP}}</td>
+            <td>{{item.Type}}</td>
+            <td>{{item.Family}}</td>
+            <td>{{item.Status}}</td>
+            <td><input type="checkbox" [checked]=state (change)="onSelectGateway(item)" [disabled]="disabled" [value]="item.selected"></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="8" style="height:50px;">
+              <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="row">
+      <div col="4" style="margin-left:auto;margin-right:auto;">
+        <gwdimagebtn (click)="onStart()" btnTitle="Start" btnImage="{{'/app/gateway/icon_start.png' | baAppPicture}}"></gwdimagebtn>
+        <gwdimagebtn (click)="onStop()" btnTitle="Stop" btnImage="{{'/app/gateway/icon_stop.png' | baAppPicture}}"></gwdimagebtn>
+        <gwdimagebtn (click)="onRefresh()" btnTitle="Restart" btnImage="{{'/app/gateway/icon_refresh.png' | baAppPicture}}"></gwdimagebtn>
+      </div>
+    </div>
+  </div>
+</div>

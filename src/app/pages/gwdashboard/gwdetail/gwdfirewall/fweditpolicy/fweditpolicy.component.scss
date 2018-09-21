@@ -1,0 +1,36 @@
+@import "../../gwdetail.component";
+@import "../gwdfirewall.component";
+
+.container-style {
+  padding: 20px;
+  height: $fwPaneHeight;
+}
+
+@media (max-width: 575px) {
+  .container-style {
+    height: 480px;
+  }
+}
+
+@media (max-width: 374px) {
+  .container-style {
+    height: 520px;
+  }
+}
+
+.form-group {
+  input {
+    margin-left: 10px;
+    width: 40%;
+  }
+  label {
+    width: 45%;
+    font-size: 13pt;
+  }
+
+  select {
+    margin-left: 10px;
+    width: 40%;
+    height: 34px;
+  }
+}

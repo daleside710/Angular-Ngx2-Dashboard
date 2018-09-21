@@ -1,0 +1,23 @@
+{
+    "rules":[
+            {
+                "name":"USA",
+                "deviceName":"Apple Inc",
+                "severity":"13",
+                "dateTime":"2018/07/12 12:13"
+            },
+            {
+                "name":"Sweden",
+                "deviceName":"IKEA Furnitures",
+                "severity":"13",
+                "dateTime":"2018/07/12 12:13"
+            },
+            {
+                "name":"Finland",
+                "deviceName":"Nokia",
+                "severity":"13",
+                "dateTime":"2018/07/12 12:13"
+            }
+    ]
+    
+}

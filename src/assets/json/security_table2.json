@@ -1,0 +1,26 @@
+{
+    "rules":[
+            {
+                "devicename":"iPhone",
+                "commutype":"WeChat",
+                "location":"Building 43",
+                "status":"Connected",
+                "lastconnect":"2018/07/12 12:13"
+            },
+            {
+                "devicename":"iPad",
+                "commutype":"Skype",
+                "location":"Building 43",
+                "status":"Connected",
+                "lastconnect":"2018/07/12 12:13"
+            },
+            {
+                "devicename":"Android",
+                "commutype":"Freelancer",
+                "location":"Building 43",
+                "status":"Connected",
+                "lastconnect":"2018/07/12 12:13"
+            }
+    ]
+    
+}

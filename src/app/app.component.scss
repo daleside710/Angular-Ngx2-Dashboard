@@ -1,0 +1,230 @@
+@import "./theme/sass/conf/conf";
+@import "./theme/components/baSidebar/baSidebar";
+
+$table-header-color: #4792cc;
+$chartred-color: #df6582;
+$chartgreen-color: #82c454;
+$chartyellow-color: #d3ba2c;
+
+.device-button-group {
+  text-align: center;
+
+  div {
+    //cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    font-size: 8pt;
+    margin: 5px;
+
+    .device-label.send {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      position: relative;
+      top: 2px;
+      background-color: $chartred-color;
+      opacity: 1;
+    }
+
+    .device-label.receive {
+      width: 15px;
+      height: 15px;
+      background-color: $chartgreen-color;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      position: relative;
+      top: 2px;
+      opacity: 1;
+    }
+
+    .device-label.error {
+      width: 15px;
+      height: 15px;
+      background-color: $chartyellow-color;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      position: relative;
+      top: 2px;
+      opacity: 1;
+    }
+
+    .device-label.Normal {
+      width: 15px;
+      height: 15px;
+      background-color: $chartgreen-color;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+      position: relative;
+      top: 2px;
+      opacity: 1;
+    }
+    .device-label.Suspicious {
+      width: 15px;
+      height: 15px;
+      background-color: $chartyellow-color;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+      position: relative;
+      top: 2px;
+      opacity: 1;
+    }
+    .device-label.Malicious {
+      width: 15px;
+      height: 15px;
+      background-color: $chartred-color;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+      position: relative;
+      top: 2px;
+      opacity: 1;
+    }
+  }
+}
+
+:host /deep/ {
+  ba-card {
+    padding-left: 0px;
+    @media (max-width: $resXS) {
+      padding-right: 0px;
+    }
+  }
+
+  @mixin layout-collapsed() {
+    .al-main {
+      margin-left: 50px;
+    }
+
+    .al-footer {
+      padding-left: 83px;
+    }
+  }
+
+  @mixin sidebar-collapsed() {
+    .al-sidebar {
+      width: 52px;
+
+      .fa-angle-down,
+      .fa-angle-up {
+        opacity: 0;
+      }
+
+      .al-sidebar-sublist {
+        position: absolute;
+        top: -1px;
+        left: 52px;
+        @include bg-translucent-dark(0.8);
+        width: 0;
+        display: block;
+        overflow: hidden;
+        transition: width 0.5s ease;
+
+        &.slide-right {
+          width: 135px;
+        }
+
+        &::before {
+          display: none;
+        }
+
+        li {
+          &::before {
+            display: none;
+          }
+
+          a {
+            padding-left: 18px;
+            padding-right: 18px;
+            min-width: 130px;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      .sidebar-hover-elem,
+      .sidebar-select-elem {
+        left: 48px;
+      }
+    }
+  }
+
+  @mixin sidebar-overlap() {
+    .al-sidebar {
+      width: $sidebar-width;
+      @include bg-translucent-dark(0.75);
+      transition: width 0.5s ease;
+
+      .fa-angle-down,
+      .fa-angle-up {
+        opacity: 1;
+      }
+
+      .al-sidebar-sublist {
+        @include default-sublist();
+        top: auto;
+        left: auto;
+        background: none;
+        width: auto;
+        overflow: visible;
+        transition: none;
+      }
+
+      .sidebar-hover-elem,
+      .sidebar-select-elem {
+        left: $sidebar-width - 4;
+        transition: left 0.5s ease;
+      }
+    }
+  }
+
+  @mixin sidebar-hidden() {
+    .al-sidebar {
+      width: 0;
+    }
+
+    .sidebar-hover-elem,
+    .sidebar-select-elem {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .menu-collapsed {
+      @include layout-collapsed();
+    }
+  }
+
+  @media (max-width: 1200px) and (min-width: $resXS) {
+    @include layout-collapsed();
+  }
+
+  @media (min-width: $resXS + 1) {
+    .menu-collapsed {
+      @include sidebar-collapsed();
+    }
+  }
+
+  @media (max-width: 1200px) {
+    @include sidebar-overlap();
+  }
+
+  @media (max-width: $resXS) {
+    .menu-collapsed {
+      @include sidebar-hidden();
+    }
+
+    .al-main {
+      margin-left: 0;
+    }
+
+    .al-footer {
+      padding-left: 0;
+    }
+  }
+}

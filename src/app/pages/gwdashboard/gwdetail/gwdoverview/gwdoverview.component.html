@@ -1,0 +1,35 @@
+<div class="row" style="height:auto;padding:10px;">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-12" style="height:auto;">
+    <h3 style="text-align: center;margin-top:10px; height:30px;">Network</h3>
+    <div style="height:auto;">
+      <div id="linechart_network" style="width:100%;height:340px;"></div>
+      <div class="device-button-group" style="height:30px;">
+        <div class="device-button"><span class="device-label send"></span>Send</div>
+        <div class="device-button"><span class="device-label receive"></span>Receive</div>
+        <div class="device-button"><span class="device-label error"></span>Error</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 col-12" style="height:auto;">
+    <h3 style="text-align: center;margin-top:10px; height:30px;">System Performance</h3>
+    <div style="height:auto;">
+      <div style="height:auto;">
+        <ul class="nav nav-pills">
+          <li *ngIf="nSelectTab==0" class="active"><a (click)="onTabSelect(0)">Week</a></li>
+          <li *ngIf="nSelectTab!=0"><a (click)="onTabSelect(0)">Week</a></li>
+          <li *ngIf="nSelectTab==1" class="active"><a (click)="onTabSelect(1)">Month</a></li>
+          <li *ngIf="nSelectTab!=1"><a (click)="onTabSelect(1)">Month</a></li>
+          <li *ngIf="nSelectTab==2" class="active"><a (click)="onTabSelect(2)">Year</a></li>
+          <li *ngIf="nSelectTab!=2"><a (click)="onTabSelect(2)">Year</a></li>
+        </ul>
+      </div>
+      <div id="linechart_system" style="width:100%;height:305px;"></div>
+      <div class="device-button-group" style="height:50px;">
+        <div class="device-button"><span class="device-label send"></span>Disk Usage</div>
+        <div class="device-button"><span class="device-label receive"></span>Cpu Usage</div>
+        <div class="device-button"><span class="device-label error"></span>Memory Usage</div>
+      </div>
+    </div>
+  </div>
+
+</div>

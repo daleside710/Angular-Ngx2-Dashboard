@@ -1,0 +1,44 @@
+@import "../../../../../app.component";
+@import "../../gwdetail.component";
+@import "../gwdsysservices.component";
+
+.container-style {
+  height: $ssPaneHeight;
+  padding-right: 15px;
+}
+
+.ssosimplepie-style {
+  padding: 0;
+  margin-top: 10px;
+  height: 100%;
+}
+
+.container-rightgraph {
+  height: calc(100%-200px);
+}
+.piegraphregion {
+  height: 50%;
+  padding: 10px;
+}
+
+.linegraphregion {
+  height: 50%;
+  padding: 0px;
+}
+
+@media (max-width: 768px) {
+  .container-style {
+    height: 950px;
+  }
+  .container-rightgraph {
+    margin-top: 70px;
+    height: 650px;
+  }
+
+  .piegraphregion {
+    height: 300px;
+  }
+  .linegraphregion {
+    height: 320px;
+  }
+}

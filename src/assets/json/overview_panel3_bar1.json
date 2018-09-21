@@ -1,0 +1,11 @@
+{    
+    "data":[{
+        "country": "USA",
+        "visits": 3025,
+        "color": "#440e62"
+      }, {
+        "country": "China",
+        "visits": 1882,
+        "color": "#959595"
+      }]
+}

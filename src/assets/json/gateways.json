@@ -1,0 +1,114 @@
+{
+    "values":[
+            {
+                "SN": "1",
+                "Ip": "192.168.1.51",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Normal",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.678345
+            },
+            {
+                "SN": "2",
+                "Ip": "192.168.1.52",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Normal",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.678345
+            },
+            {
+                "SN": "3",
+                "Ip": "192.168.1.53",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Normal",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.683241
+            },
+            {
+                "SN": "4",
+                "Ip": "192.168.1.54",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Normal",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.686241
+            },
+            {
+                "SN": "5",
+                "Ip": "192.168.1.55",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Malicious",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.689241
+            },
+            {
+                "SN": "6",
+                "Ip": "192.168.1.55",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Suspicious",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.683241
+            },
+            {
+                "SN": "7",
+                "Ip": "192.168.1.55",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Normal",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.686641
+            },
+            {
+                "SN": "8",
+                "Ip": "192.168.1.55",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Normal",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.692241
+            },
+            {
+                "SN": "9",
+                "Ip": "192.168.1.55",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Normal",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.682241
+            },
+            {
+                "SN": "10",
+                "Ip": "192.168.1.55",
+                "Device": "1154A",
+                "Model": "Cisco2911",
+                "Status": "Normal",
+                "Connected_Devices": 29,
+                "Last_Seen": "2018-12-20 15:20:30",
+                "Lat": 1.352091,
+                "Long": 103.672241
+            }
+    ]
+}

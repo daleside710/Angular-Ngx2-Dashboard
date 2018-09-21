@@ -1,0 +1,170 @@
+.db-card {
+    min-height: 150px !important;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    .db-card-title {
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        font-family: "Roboto", sans-serif;
+    }
+    .db-card-content {
+        font-size: 60px;
+        line-height: 85px;
+        text-transform: uppercase;
+        font-family: "Roboto", sans-serif;
+    }
+    .db-card-action a {
+        color: white;
+        font-size: 14px;
+        line-height: 20px;
+        font-family: "Roboto", sans-serif;
+    }
+}
+.db-card-risk {
+    background-color: rgba(244, 190, 104, 1);
+    .db-card-title {
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        font-family: "Roboto", sans-serif;
+    }
+    .db-card-content {
+        font-size: 30px;
+        line-height: 45px;
+        text-align: left;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: rgba(74, 74, 74, 1);
+        font-family: "Roboto", sans-serif;
+    }
+    .db-card-description {
+        font-size: 13px;
+        line-height: 14px;
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+    }
+    .db-card-action {
+        text-align: right;
+        a {
+            font-size: 14px;
+            line-height: 20px;
+            text-align: right;
+            font-family: "Roboto", sans-serif;
+        }
+    }
+
+}
+
+
+:host /deep/ .ct-area {
+    stroke: none;
+    fill-opacity: 0.1;
+}
+
+:host /deep/ .ct-grid{
+    stroke-dasharray: 0px;
+    stroke: rgba(0, 0, 0, 0.1);
+}
+
+:host /deep/ .ct-label{
+    font-size: 0.9rem;
+}
+
+// Line with Area Chart 1 CSS Starts
+
+:host /deep/ .lineArea1 .ct-series-a .ct-area {
+    fill-opacity: 0.3;
+    fill: green;
+}
+
+:host /deep/ .lineArea1 .ct-series-b .ct-area {
+    fill: #FF586B;
+    fill-opacity: 0.6;
+}
+:host /deep/ .lineArea1 .ct-line{
+    stroke: #FF586B;
+    stroke-width: 0px;
+    fill:none;
+}
+:host /deep/ .lineArea1 .ct-point {
+    stroke-width: 0px;
+}
+:host /deep/ .ct-label.ct-vertical.ct-start {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+// Line with Area Chart 1 CSS Ends
+
+
+.ymd-button-group {
+    float: right;
+    border: white solid 1px;
+    border-radius: 5px;
+    padding: 2px;
+
+    label {
+        margin: 0px;
+        cursor: pointer;
+    }
+    .ymd-label {
+        padding: 10px 20px;
+        border-radius: 3px;
+        //background-color: #00abff;
+        color: white;
+    }
+    .ymd-label.active {
+        padding: 10px 20px;
+        border-radius: 3px;
+        background-color: white;
+        color: #00abff;
+    }  
+}
+.device-button-group{
+    text-align:center;
+    div {
+        //cursor: pointer;
+        line-height:20px;
+        display:inline-block;
+        font-size:20px;
+
+        margin:15px;
+
+        .device-label.connected{
+            width: 20px;
+            height: 20px;
+            background-color: lightskyblue;
+            border-radius: 50%;
+            display:inline-block;
+            margin-right:10px;
+
+            position:relative;
+            top:2px;
+
+            background-color: green;
+            opacity:0.3;
+        }
+
+        .device-label.authenticated{
+            width: 20px;
+            height: 20px;
+            background-color: #FF586B;
+            border-radius: 50%;
+            display:inline-block;
+            margin-right:10px;
+
+            position:relative;
+            top:2px;
+            opacity:0.6;
+        }        
+
+    }
+    
+}
+
+
+:host /deep/ foreignObject {
+    width:50px;
+}

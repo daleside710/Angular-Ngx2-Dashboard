@@ -1,0 +1,13 @@
+{
+  "value": {
+    "SN": "1",
+    "Ip": "192.168.1.51",
+    "Device": "1154A",
+    "Model": "Cisco2911",
+    "Status": "Normal",
+    "Connected_Devices": 29,
+    "Last_Seen": "2018-12-20 15:20:30",
+    "Lat": 1.352091,
+    "Long": 103.678345
+  }
+}

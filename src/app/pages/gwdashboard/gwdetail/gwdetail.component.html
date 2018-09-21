@@ -1,0 +1,124 @@
+<div class="row" style="height:auto; overflow: hidden;">
+  <div class="col-xlg-2 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 left-side-bar" style="padding-left:0px;padding-right:0px;padding-top:10px;">
+    <div class="row">
+      <h3 style="text-align: center">Gateway Details</h3>
+      <div class="col-xlg-12 col-xl-12 col-lg-12 col-md-4 col-sm-4 col-12">
+        <div class="aligncenter-content">
+          <div class="device-button-group">
+            <div class="device-button">
+              <span class="device-label {{gateway_status}}"></span>
+              <span>
+                {{gateway_status}}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="aligncenter-content">
+          <span><b>Device:</b></span>
+          <span>{{strDevice}}</span>
+        </div>
+        <div class="aligncenter-content">
+          <span><b>Model:</b></span>
+          <span>{{strModel}}</span>
+        </div>
+        <div class="aligncenter-content">
+          <div class="detail-map" style="z-index: 100;"></div>
+        </div>
+      </div>
+      <div class="col-xlg-12 col-xl-12 col-lg-12 col-md-4 col-sm-4 col-12">
+        <div class="aligncenter-content">
+          <span><b>Latitude:</b></span>
+          <input type="text" class="location-input" value="{{fLatitude}}" />
+        </div>
+        <div class="aligncenter-content">
+          <span><b>Longitude:</b></span>
+          <input type="text" class="location-input" value="{{fLongitude}}" />
+        </div>
+        <div class="aligncenter-content">
+          <span><b>IP Address:</b></span>
+          <span>{{strIP}}</span>
+        </div>
+        <div class="aligncenter-content">
+          <span><b>OS:</b></span>
+          <span>{{strOS}}</span>
+        </div>
+        <div class="aligncenter-content">
+          <span><b>Version:</b></span>
+          <span>{{strVersion}}</span>
+        </div>
+        <div class="aligncenter-content">
+          <span><b>Server IP:</b></span>
+          <span>{{strServerIP}}</span>
+        </div>
+      </div>
+      <div class="col-xlg-12 col-xl-12 col-lg-12 col-md-4 col-sm-4 col-12" style="margin-bottom:10px;">
+        <div class="aligncenter-content" style="margin-top:20px;">
+          <span><b>Last Seen</b></span>
+        </div>
+        <div class="aligncenter-content">
+          <span><b>Date:</b></span>
+          <span>{{strLSDate}}</span>
+        </div>
+        <div class="aligncenter-content">
+          <span><b>Time:</b></span>
+          <span>{{strLSTime}}</span>
+        </div>
+        <div class="aligncenter-content">
+          <span><b>Time Zone:</b></span>
+          <span>{{strTimeZone}}</span>
+        </div>
+        <div class="aligncenter-content">
+          <span><b>Country:</b></span>
+          <span>{{strCountry}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xlg-10 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 right-content">
+    <div style="width:100%;">
+      <div class="row" style="height:auto;">
+        <div class="col-xlg-4 col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6" style="padding:0">
+          <div id="piechart_gatewaystatus" [style.width.%]="100" [style.height.%]="100" style="margin:auto;position:relative;"></div>
+        </div>
+        <div class="col-xlg-3 col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6" style="padding:0">
+          <div style=" text-align: center;margin:auto;position: relative;top: 50%;transform: translateY(-50%); ">
+            <h2 style="text-align: center; " translate>{{nAlerts}} Alerts</h2>
+            <div>
+              <span class="gateways-status-span "><b>{{nStatusHigh}}</b></span>
+              <span class="gateways-status-title-span">High</span>
+              <span class="gateways-status-span "><b>{{nStatusMedium}}</b></span>
+              <span class="gateways-status-title-span">Medium</span>
+              <span class="gateways-status-span "><b>{{nStatusLow}}</b></span>
+              <span class="gateways-status-title-span">Low</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xlg-5 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 " style="padding:5;margin-top:10px;display: flex; justify-content: space-between; ">
+          <gwdstatuscard cardTitle="Connected " cardImage="{{ '/app/gateway/icon_connected.png' | baAppPicture}} "></gwdstatuscard>
+          <gwdstatuscard cardTitle="Authenticated " cardImage="{{ '/app/gateway/icon_auth.png' | baAppPicture}} "></gwdstatuscard>
+          <gwdstatuscard cardTitle="Unauthenticated " cardImage="{{ '/app/gateway/icon_unauth.png' | baAppPicture}} "></gwdstatuscard>
+          <gwdstatuscard cardTitle="Blocked " cardImage="{{ '/app/gateway/icon_blocked.png' | baAppPicture}} "></gwdstatuscard>
+          <!--<div class="row " style="margin-top:40px;display: flex; justify-content: space-between;"></div>
+          </div>-->
+        </div>
+      </div>
+        <ul class="nav nav-pills ">
+          <li *ngIf="nSelectTab==0 " class="active "><a (click)="onTabSelect(0) ">Overview</a></li>
+          <li *ngIf="nSelectTab!=0 "><a (click)="onTabSelect(0) ">Overview</a></li>
+          <li *ngIf="nSelectTab==1 " class="active "><a (click)="onTabSelect(1) ">Firewall</a></li>
+          <li *ngIf="nSelectTab!=1 "><a (click)="onTabSelect(1) ">Firewall</a></li>
+          <li *ngIf="nSelectTab==2 " class="active "><a (click)="onTabSelect(2) ">System Services</a></li>
+          <li *ngIf="nSelectTab!=2 "><a (click)="onTabSelect(2) ">System Services</a></li>
+          <li *ngIf="nSelectTab==3 " class="active "><a (click)="onTabSelect(3) ">Network Connections</a></li>
+          <li *ngIf="nSelectTab!=3 "><a (click)="onTabSelect(3) ">Network Connections</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="width:100%; ">
+      <div class="white-border-card " style="margin-top:10px;margin-bottom:10px;height:auto;">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+</div>

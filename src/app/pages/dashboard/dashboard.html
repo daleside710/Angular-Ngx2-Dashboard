@@ -1,0 +1,76 @@
+<div class="row">
+
+  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <div baCardBlur class="animated fadeIn card db-card" zoom-in>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6" >
+            <div class="col-12 db-card-title">Connected</div>
+            <div class="col-12 db-card-content">{{connectedDevices}}</div>
+          </div>
+          <div class="col-6" >
+            <div class="col-12 db-card-title">Authenticated</div>
+            <div class="col-12 db-card-content">{{authenticatedDevices}}</div>
+          </div>
+        </div>
+        <div class="row" >
+          <div class="col-12 db-card-action">
+            <a routerLink="/pages/devices/authorized">Active Devices ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+    <div baCardBlur class="animated fadeIn card db-card" zoom-in>
+      <div class="card-body">
+        <div class="db-card-title">Expiring Certificates</div>
+        <div class="db-card-content">{{expiringCerts}}</div>
+        <div class="db-card-action">
+          <a routerLink="/pages/devices/authorized"> Update Certs ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+    <div baCardBlur class="animated fadeIn card db-card db-card-risk" zoom-in>
+      <div class="card-body">
+        <div class="db-card-title">Overall Security</div>
+        <div class="db-card-content">At Risk</div>
+        <div class="db-card-description">There might be devices connected to your system that are suspicious</div>
+        <div class="db-card-action">
+          <a routerLink="/pages/monitoring">Monitor Devices ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <ba-card>
+        <span class="graph-title" style="display:inline-block;margin: 20px;font-size: 24px;margin-bottom: 50px;">Overview of Devices</span>
+        <div class="ymd-button-group">
+            <label class="ymd-label active" (click)="GetGraphByYMD($event, 'week')">Week</label>
+            <label class="ymd-label" (click)="GetGraphByYMD($event, 'month')">Month</label>
+            <label class="ymd-label" (click)="GetGraphByYMD($event, 'year')">Year</label>
+        </div>
+      <!-- <div class="card-body"> -->
+      <!-- <div id="chartdiv" [style.width.%]="100" [style.height.px]="500"></div> -->
+        <div id="line-area1" class="lineArea1" style="height: 550px !important;">
+            <x-chartist [data]="lineArea1.data" [type]="lineArea1.type" [options]="lineArea1.options" [responsiveOptions]="lineArea1.responsiveOptions"
+                [events]="lineArea1.events">
+            </x-chartist>
+        </div>
+        <div class="device-button-group">
+            <div class="device-button" ><span class="device-label connected"></span>Connected Devices</div>
+            <div class="device-button" ><span class="device-label authenticated"></span>Authenticated Devices</div>
+        </div>
+      <!-- </div> -->
+    </ba-card>
+  </div>
+</div>
